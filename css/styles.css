@@ -1,0 +1,307 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 550;
+}
+
+/* General styling for each section */
+section {
+    width: 100%;
+    padding: 80px 0; /* Adjusted for spacing on different devices */
+}
+
+body {
+    overflow-y: scroll;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: white; /* Set default background color to white */
+    transition: background-color 0.5s ease;
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+}
+
+/* Add background color on scroll */
+.navbar-scrolled {
+    background-color: white !important;
+}
+
+/* Navbar brand and links */
+.navbar-brand, .navbar-nav .nav-link {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Adjust the navbar-brand for smaller screens */
+@media (max-width: 470px) {
+    .navbar-brand.d-none {
+        display: none; /* Hide original navbar-brand on small screens */
+    }
+    
+    .navbar-brand.d-lg-none {
+        display: block; /* Show alternative navbar-brand on small screens */
+    }
+}
+
+/* Hamburger Menu Button */
+.hamburger {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+    z-index: 1100; /* Ensure the hamburger button is above the menu */
+}
+
+.hamburger .line {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px auto;
+    transition: all 0.3s ease;
+}
+
+/* Menu icon animation for active state */
+.hamburger.active .line:nth-child(1) {
+    transform: rotate(45deg);
+    top: 9px;
+}
+
+.hamburger.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .line:nth-child(3) {
+    transform: rotate(-45deg);
+    top: -9px;
+}
+
+/* Hamburger Menu Container */
+.hamburger-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 60px; /* Adjust based on your navbar height */
+    right: 0;
+    background-color: white; /* Background color of menu */
+    width: 100%; /* Full width menu */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+    z-index: 1000;
+}
+
+/* Show hamburger menu when active */
+.hamburger.active + .hamburger-menu {
+    display: block;
+}
+
+/* Menu Items Styling */
+.hamburger-menu .menu-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee; /* Separator line between items */
+    text-align: center;
+}
+
+.hamburger-menu .menu-item:last-child {
+    border-bottom: none; /* Remove border for last item */
+}
+
+.hamburger-menu .menu-item a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    display: block;
+}
+
+/* Hover Effect for Menu Items */
+.hamburger-menu .menu-item:hover {
+    background-color: #f5f5f5;
+}
+
+/* Home section */
+#home {
+    background-color: #0097B2;
+    padding-top: 60px;
+    text-align: center; /* Center align content in home section */
+}
+
+#home h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    padding-top: 200px;
+    padding-left: 50px;
+    animation: slideInDown 1.5s ease-out;
+    font-size: 3rem; /* Default font size for large screens */
+    margin: 0 auto; /* Center the heading horizontally */
+    max-width: 90%; /* Limit the width to avoid overflow */
+}
+
+/* Responsive heading adjustments */
+@media (max-width: 1199px) {
+    #home h1 {
+        font-size: 2.5rem; /* Medium screens */
+        padding-left: 30px;
+    }
+}
+
+@media (max-width: 991px) {
+    #home h1 {
+        font-size: 2rem; /* Small screens */
+        padding-left: 20px;
+        padding-top: 150px;
+    }
+}
+
+@media (max-width: 767px) {
+    #home h1 {
+        font-size: 1.5rem; /* Extra small screens */
+        padding-left: 10px;
+        padding-top: 100px;
+    }
+}
+
+.title-image {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+/* Services section */
+#services {
+    background-color: #e6e6e6;
+    padding: 50px 0;
+}
+
+#services .card {
+    background-color: transparent;
+    border: none;
+}
+
+.card-img-top {
+    height: 200px;
+    border-radius: 5px;
+}
+
+.card-title {
+    font-size: 18px;
+}
+
+.card-text {
+    font-size: 13px;
+}
+
+.card.animate {
+    animation: slideIn 1.4s ease-out both;
+}
+
+/* Adjust column layout for responsiveness */
+@media (min-width: 768px) {
+    .col-md-3 {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+}
+
+@media (max-width: 767px) {
+    .col-md-3 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
+
+@media (max-width: 575px) {
+    .col-md-3 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+
+/* Footer styles */
+#footer {
+    background-color: #4d4d4d;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1199px) {
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px 0;
+    }
+
+    .d-flex {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .title-image {
+        max-width: 100%;
+    }
+
+    #home h1 {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 575px) {
+    .card-img-top {
+        height: 150px;
+    }
+
+    .testimonial-content {
+        width: 90%;
+    }
+}
+/* Default styling for the alternative navbar-brand */
+.navbar-brand.d-lg-none {
+    display: none; /* Hidden by default for larger screens */
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+    white-space: normal; /* Allow text to wrap */
+    text-align: center; /* Center text */
+    padding: 10px; /* Add padding for better spacing */
+    width: 100%; /* Full width for better wrapping */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+}
+
+/* Ensure visibility of the alternative brand on small screens */
+@media (max-width: 470px) {
+    .navbar-brand.d-lg-none {
+        display: block; /* Show the alternative navbar-brand */
+    }
+}
+
+/* Adjust text size and padding for very small screens */
+@media (max-width: 375px) {
+    .navbar-brand.d-lg-none {
+        font-size: 1.2rem; /* Smaller font size for very small screens */
+        padding: 5px; /* Adjust padding */
+    }
+}
+
+/* Adjust text size and padding for extra small screens */
+@media (max-width: 320px) {
+    .navbar-brand.d-lg-none {
+        font-size: 1rem; /* Smaller font size for extra small screens */
+        padding: 2px; /* Adjust padding */
+    }
+}
